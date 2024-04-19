@@ -1,0 +1,15 @@
+{
+	"type": "module",
+	"dependencies": {
+		"@turf/area": "^7.0.0-alpha.114",
+		"@turf/boolean-intersects": "^7.0.0-alpha.114",
+		"@turf/geojson-rbush": "^7.0.0-alpha.114",
+		"@turf/helpers": "^7.0.0-alpha.114",
+		"@turf/intersect": "^7.0.0-alpha.114",
+		"@types/geojson": "^7946.0.14",
+		"@types/node": "^20.12.7",
+		"geos-wasm": "^2.0.0",
+		"jsts": "^2.11.0",
+		"tsx": "^4.7.2"
+	}
+}
