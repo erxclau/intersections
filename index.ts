@@ -32,10 +32,6 @@ type BlockProperties = {
 type SubmissionProperties = {
   id: Number;
   neighborhood: String;
-  years_detroit: Number;
-  years_neighborhood: Number;
-  gathering_place: String;
-  story: String;
 };
 
 async function geos(
