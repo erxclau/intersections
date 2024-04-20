@@ -26,6 +26,7 @@ import area from "@turf/area";
 
 type BlockProperties = {
   geoid20: String;
+  area: number;
 };
 
 type SubmissionProperties = {
@@ -42,7 +43,7 @@ async function geos(
   submissionCollection: FeatureCollection<Polygon, SubmissionProperties>
 ) {
   const geos = await initGeosJs({
-    errorHandler: () => {}
+    errorHandler: () => {},
   });
 
   let numIntersections = 0;
@@ -234,13 +235,6 @@ function turf(
 
   let numIntersections = 0;
 
-  const blockAreas = new Map(
-    blockCollection.features.map((feature) => [
-      feature.properties.geoid20,
-      area(feature),
-    ])
-  );
-
   const intersections = new Map<
     String,
     Array<[Feature<Geometry, SubmissionProperties>, Number]>
@@ -266,8 +260,9 @@ function turf(
       }
 
       const blockName = block.properties.geoid20;
+      const blockArea = block.properties.area;
+
       const intersectionArea = area(intersection);
-      const blockArea = blockAreas.get(blockName)!;
 
       if (intersectionArea / blockArea < 0.01) {
         continue;
