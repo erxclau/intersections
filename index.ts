@@ -294,17 +294,17 @@ async function main() {
     readFileSync("./data/submissions.json").toString()
   ) as FeatureCollection<Polygon, SubmissionProperties>;
 
-  console.time("geos");
-  await geos(blocks, submissions);
-  console.timeEnd("geos");
+  // console.time("geos");
+  // await geos(blocks, submissions);
+  // console.timeEnd("geos");
 
   console.time("turf");
   turf(blocks, submissions);
   console.timeEnd("turf");
 
-  console.time("jsts");
-  jsts(blocks, submissions);
-  console.timeEnd("jsts");
+  // console.time("jsts");
+  // jsts(blocks, submissions);
+  // console.timeEnd("jsts");
 }
 
 main();

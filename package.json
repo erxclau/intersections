@@ -1,6 +1,11 @@
 {
 	"type": "module",
+	"scripts": {
+		"build": "tsc -p .",
+    "perf": "0x -o index.js -q -s"
+	},
 	"dependencies": {
+		"0x": "^5.7.0",
 		"@turf/area": "^7.0.0-alpha.114",
 		"@turf/boolean-intersects": "^7.0.0-alpha.114",
 		"@turf/geojson-rbush": "^7.0.0-alpha.114",
@@ -10,6 +15,7 @@
 		"@types/node": "^20.12.7",
 		"geos-wasm": "^2.0.0",
 		"jsts": "^2.11.0",
-		"tsx": "^4.7.2"
+		"tsx": "^4.7.2",
+		"typescript": "^5.4.5"
 	}
 }
